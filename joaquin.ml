@@ -45,3 +45,17 @@ let rec binNumbers list =
 ;;
 
 binNumbers l4;;
+
+(* Problem 7 *)
+(* Author: Joaquin Nietes*)
+
+(* nr = choose(n-1, r-1) + choose(n-1, r) *)
+(* base case: choose(n, 0) = choose(n, n) = 1 *)
+let rec choose n r = 
+  match n, r with
+  | n, 0 -> 1
+  | n, r when n = r -> 1
+  | _ -> choose (n-1) (r-1) + choose (n-1) r
+;;
+
+choose 10 5;;
