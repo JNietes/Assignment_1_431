@@ -59,3 +59,18 @@ let rec choose n r =
 ;;
 
 choose 10 5;;
+
+(* Problem 8 *)
+(* Author: Joaquin Nietes*)
+let rec dup list = 
+  match list with
+  | [] -> []
+  | [hd] -> [hd;hd]
+  | hd :: tl -> hd :: hd :: dup tl
+;;
+
+let l5 = ['a';'b';'c';'d'];;
+let l6 = ['a'];;
+
+dup l5;;
+dup l6;;
