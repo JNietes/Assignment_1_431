@@ -74,3 +74,12 @@ let l6 = ['a'];;
 
 dup l5;;
 dup l6;;
+
+(* Problem 11 *)
+(* Author: Joaquin Nietes*)
+type btree =
+  | Empty
+  | Leaf of float
+  | Node of (float * btree * btree)
+
+let btree1 = Node(3.1, Node(0.9, Empty, Leaf(2.5)), Leaf(10.2))
