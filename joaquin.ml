@@ -83,3 +83,14 @@ type btree =
   | Node of (float * btree * btree)
 
 let btree1 = Node(3.1, Node(0.9, Empty, Leaf(2.5)), Leaf(10.2))
+
+(* Problem 13 *)
+(* Author: Joaquin Nietes*)
+let rec numOfLeaves btree =
+  match btree with 
+  | Empty -> 0
+  | Leaf(f) -> 1
+  | Node(f, l, r) -> numOfLeaves l + numOfLeaves r
+;;
+
+numOfLeaves btree1;;
