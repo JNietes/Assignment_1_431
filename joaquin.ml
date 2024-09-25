@@ -1,7 +1,6 @@
 
 (* Problem 1 *)
 (* Author: Joaquin Nietes*)
-
 let l1 = [];;
 let l2 = [5];;
 let l3 = [3; 1; 4; 5; 9];;
@@ -19,7 +18,6 @@ listStatus l3;;
 
 (* Problem 3 *)
 (* Author: Joaquin Nietes*)
-
 let rec pop list = 
   match list with
   | [] -> []
@@ -33,7 +31,6 @@ pop l3;;
 
 (* Problem 5 *)
 (* Author: Joaquin Nietes*)
-
 let l4 = [0;1;1;3;4];;
 
 let rec binNumbers list =
@@ -74,6 +71,18 @@ let l6 = ['a'];;
 
 dup l5;;
 dup l6;;
+
+(* Problem 9*)
+(* Author: Joaquin Nietes and Copilot for "when hd = tl"*)
+let rec undup list = 
+  match list with
+  | [] -> []
+  | [hd] -> [hd]
+  | hd :: tl :: tltl when hd = tl ->  tl :: undup tltl
+  | _ -> raise (Failure "bad input")
+;;
+
+undup (dup l5);;
 
 (* Problem 11 *)
 (* Author: Joaquin Nietes*)
